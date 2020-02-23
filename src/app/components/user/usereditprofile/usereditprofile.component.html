@@ -1,8 +1,8 @@
 <!--start edit profile-->
 <section class="edit-profile">
+  <h2>Edit Profile</h2>
+
   <div class="container">
-    <h2>Edit Profile</h2>
-    <hr>
     <div class="row">
       <!-- left column -->
       <div class="col-md-5">
@@ -10,6 +10,14 @@
           <img src="assets/images/user.png" class="avatar img-circle" alt="logo">
           <h5>Upload other photo...</h5>
           <input type="file" class="form-control" name="image">
+        </div>
+        <div class="form-group">
+          <label class="col-lg-8 control-label"></label>
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <input type="submit" class="btn btn-success" (click)="updateUser(updateForm.value)" value="Save">
+            <span></span>
+            <input type="reset" class="btn btn-danger" value="Cancel">
+          </div>
         </div>
       </div>
       <!-- edit form column -->
@@ -58,20 +66,20 @@
           <input name="city" class="form-control" ngModel #city='ngModel' type="text" ngModel="{{user?.City}}">
         </div>
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label class="col-lg-8 control-label">Rate:</label>
         <div class="col-lg-12 col-md-12 col-sm-12">
           <input class="form-control" name="Rate" ngModel #Rate='ngModel' type="text" ngModel="{{user?.Rate}}">
         </div>
-      </div>
-      <div class="form-group">
+      </div> -->
+      <!-- <div class="form-group">
         <label class="col-lg-8 control-label"></label>
         <div class="col-lg-12 col-md-12 col-sm-12">
           <input type="submit" class="btn btn-success" (click)="updateUser(updateForm.value)" value="Save">
           <span></span>
           <input type="reset" class="btn btn-danger" value="Cancel">
         </div>
-      </div>
+      </div> -->
       </form>
     </div>
   </div>

@@ -10,7 +10,9 @@ img{ max-width:100%;}
   border: 1px solid #c4c4c4;
   clear: both;
   overflow: hidden;
-  height: 520px;
+  height: 420px;
+  position: relative;
+  bottom: 4px;
 }
 .top_spac{ margin: 20px 0 0;}
 

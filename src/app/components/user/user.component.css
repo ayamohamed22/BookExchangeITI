@@ -8,6 +8,14 @@
     position: absolute;
     top:140px;
     left: 42px;
+    height: 445px;
 }
-
+.data{
+    overflow: hidden;
+}
+.col-sm-8{
+    position: relative;
+    top:150px;
+    
+}
   
