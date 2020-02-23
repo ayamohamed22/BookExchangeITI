@@ -9,8 +9,10 @@ import { Injectable } from "@angular/core";
 })
 export class GenreService {
   constructor(private http: HttpClient) {}
-  getAllGeners(): Observable<Genre[]> {
-    return this.http.get<Genre[]>("http://localhost:52558/api/genres");
+  getAllGeners(PageNumber, pagSize, orderType): Observable<Genre[]> {
+    return this.http.get<Genre[]>("http://localhost:52558/api/genres", {
+      params: { orderType, pagSize, PageNumber }
+    });
   }
   getBookByGenreId(id: number): Observable<Book[][]> {
     return this.http.get<Book[][]>("http://localhost:52558/api/genres/" + id);

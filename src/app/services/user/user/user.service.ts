@@ -37,7 +37,7 @@ export class UserService {
       //     return;
       //   }
       return this.http.get<UserHaveBook>(
-        "http://localhost:52558/api/home/want/" + userId,
+        "http://localhost:52558/api/home/have",
         {
           params: { userId, pageNumber, pageSize }
         }
@@ -45,8 +45,13 @@ export class UserService {
     }
   }
 
-  getUserWantBook(userId?): Observable<Book[]> {
-    return this.http.get<Book[]>("");
+  getUserWantBook(pageNumber, pageSize, userId?): Observable<UserHaveBook> {
+    if (!userId) {
+      userId = -1;
+    }
+    return this.http.get<UserHaveBook>("http://localhost:52558/api/home/want", {
+      params: { userId, pageNumber, pageSize }
+    });
   }
   getById(userId: number): Observable<User> {
     return this.http.get<User>(

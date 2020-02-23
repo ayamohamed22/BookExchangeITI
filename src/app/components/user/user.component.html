@@ -72,28 +72,28 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/user/editprofile" class="nav-link">
+                            <a [routerLink]="['editprofile']" class="nav-link">
                                 <i class="fa fa-pencil-square-o"></i> Edit Profile
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a routerLink="/user/havedbooks" class="nav-link">
+                            <a [routerLink]="['havedbooks']" class="nav-link">
                                 <i class="fa fas fa-book"></i> My Books
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/user/wantedbooks" class="nav-link">
+                            <a [routerLink]="['wantedbooks']" class="nav-link">
                                 <i class="fa far fa-heart"></i> Wishlists
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/user/searchchat" class="nav-link">
+                            <a [routerLink]="['searchchat']" class="nav-link">
                                 <i class="fa far fa-comments"></i> Chat
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/user/complaint" class="nav-link">
+                            <a [routerLink]="['complaint']" class="nav-link">
                                 <i class="fa far fa-files-o"></i> Complaints
                             </a>
                         </li>
@@ -111,7 +111,6 @@
             <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
-
                         <router-outlet></router-outlet>
                     </div>
                 </div>

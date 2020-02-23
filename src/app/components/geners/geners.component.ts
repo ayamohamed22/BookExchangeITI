@@ -14,8 +14,8 @@ export class GenersComponent implements OnInit {
 
   constructor(private router: Router, private service: GenreService) {}
   ngOnInit() {
-    this.service.getAllGeners().subscribe(res => {
-      this.genres = res;
+    this.service.getAllGeners(1, 20, "genreName").subscribe(res => {
+      this.genres = res["genre"];
     });
   }
 }
