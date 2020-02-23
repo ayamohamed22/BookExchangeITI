@@ -19,7 +19,9 @@ export class AddBookComponent implements OnInit {
     Author_Name: new FormControl(),
     Description: new FormControl(),
     Photo_Url: new FormControl(),
-    Want: new FormControl()
+    Want: new FormControl(),
+    BookCondition: new FormControl(),
+    Categories: new FormControl()
     // UserWantBook: new FormControl()
   });
 
@@ -40,8 +42,17 @@ export class AddBookComponent implements OnInit {
       Author_Name: item.Author_Name,
       Description: item.Description,
       Photo_Url: item.Photo_Url,
-      Want: "have"
+      Want: "have",
+      Categories: item.Categories.map((val, i) => {
+        if (i != item.Categories.length - 1) {
+          return val + ",";
+        } else {
+          return val;
+        }
+      }),
+      BookCondition: 0
     });
+
     this.bookImageUrl = item.Photo_Url;
     console.log(this.bookImage.src);
   }
@@ -59,6 +70,7 @@ export class AddBookComponent implements OnInit {
     // do something when input is focused
   }
   addBook() {
+    this.form.value.Categories = this.form.value.Categories.split(",");
     console.log(this.bookService.addBook(this.form.value));
 
     console.log(this.form.value);

@@ -12,7 +12,7 @@
         <div>
             <h5><i class="fa fa-exchange" aria-hidden="true"></i></h5>
         </div>
-        <div *ngIf="requestItem.RequestStatus==0" class="row justify-content-between">
+        <div *ngIf="requestItem.RequestStatus==0 && requestItem.RequestedUser.UserId==loginService.getCurrentLogginId()" class="row justify-content-between">
             <span> Request?</span>
             <h4 (click)="accept()" class="col-6" style="padding: 0px;"><i class="fa fa-check" aria-hidden="true"></i></h4>
             <h4 (click)="refuse()" class="col-6" style="padding: 0px;"><i class="fa fa-times" aria-hidden="true"></i></h4>
@@ -21,11 +21,14 @@
             <h4 (click)="sendSwapRequest() " class="col-12 " style="padding: 0px; ">Swap It?</h4>
             <!-- <h4 (click)="refuse() " class="col-3 " style="padding: 0px; "><i class="fa fa-times " aria-hidden="true "></i></h4> -->
         </div>
-        <div *ngIf="requestItem.RequestStatus==1 && requestItem.RequestedUser.UserId==loginService.getCurrentLogginId()  " class="row justify-content-between ">
+        <div *ngIf="requestItem.RequestStatus==1 && requestItem.SendSwapUsertId!=loginService.getCurrentLogginId()  " class="row justify-content-between ">
             <span>Swap ?</span>
             <h4 (click)="acceptSwap() " class="col-3 " style="padding: 0px; "><i class="fa fa-check " aria-hidden="true "></i></h4>
             <h4 (click)="refuse() " class="col-3 " style="padding: 0px; "><i class="fa fa-times " aria-hidden="true "></i></h4>
 
+        </div>
+        <div *ngIf="requestItem.RequestStatus==4 " class="row justify-content-between ">
+            <span>Refused</span>
         </div>
         <div class="my__account__wrapper ">
             <!-- <div class="account__form ">

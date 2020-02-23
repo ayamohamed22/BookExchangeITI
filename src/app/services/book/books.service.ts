@@ -1,3 +1,4 @@
+import { UserHaveBookItem } from "./../../models/user-want.book.model";
 import { UserHaveBook } from "../../models/user-want.book.model";
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -42,5 +43,13 @@ export class BooksService {
     return this.http.get<UserHaveBook>("http://localhost:52558/api/home/have", {
       params: { pageNumber, pageSize, userId }
     });
+  }
+  getUserHaveBookByBookId(bookId): Observable<UserHaveBook> {
+    return this.http.get<UserHaveBook>(
+      "http://localhost:52558/api/home/book/have",
+      {
+        params: { bookId }
+      }
+    );
   }
 }

@@ -6,4 +6,5 @@ export class Book {
   Author_Name: string;
   Description: string;
   BookCondition: string;
+  Categories: string[];
 }

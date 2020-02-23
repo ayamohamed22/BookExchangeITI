@@ -39,6 +39,10 @@
                             <input type="text" placeholder="Enter Author Name" formControlName="Author_Name">
                         </div>
                         <div class="input__box">
+                            <label>Genres<span>*</span></label>
+                            <input type="text" placeholder="Enter List Of Genres as genre1,genre2....." formControlName="Categories">
+                        </div>
+                        <div class="input__box">
                             <label>Description<span>*</span></label>
                             <textarea rows="4" cols="75" name="description" placeholder="Enter Descritipn of book" formControlName="Description"></textarea>
                         </div>
@@ -52,6 +56,25 @@
                             <input id="heve_book" class="input-checkbox" name="Want" value="have" formControlName="Want" type="radio">
                             <span>  I have this book</span>
                         </label>
+                        <br>
+                        <div *ngIf="form.value['Want']=='have'" style="display: flex; align-items: center;">
+                            <label class="label-for-checkbox">
+                                <input id="heve_book" class="input-checkbox" name="BookCondition" value="0" formControlName="BookCondition" type="radio">
+                                <span>New</span>
+                            </label>
+                            <label class="label-for-checkbox">
+                                <input id="heve_book" class="input-checkbox" name="BookCondition" value="1" formControlName="BookCondition" type="radio">
+                                <span>Good</span>
+                            </label>
+                            <label class="label-for-checkbox">
+                                <input id="heve_book" class="input-checkbox" name="BookCondition" value="2" formControlName="BookCondition" type="radio">
+                                <span>Fair</span>
+                            </label>
+                            <label class="label-for-checkbox">
+                                <input id="heve_book" class="input-checkbox" name="BookCondition" value="3" formControlName="BookCondition" type="radio">
+                                <span>Old</span>
+                            </label>
+                        </div>
                         <br>
                         <div class="form__btn">
                             <button>Add</button>

@@ -109,7 +109,7 @@
                         <a class="search__active" href="#"></a>
                     </li>
                     <li *ngIf="!showLoginAndSignUp" class="wishlist">
-                        <a (click)="test('addBook')">add</a>
+                        <i (click)="test('addBook')" class="fa fa-plus" aria-hidden="true"></i>
                         <jw-modal id="addBook">
                             <app-add-book></app-add-book>
                         </jw-modal>

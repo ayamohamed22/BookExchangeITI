@@ -8,6 +8,7 @@ export class RequestItemMin {
   RequestedBook: Book;
   RequestStatus: number;
   SendedBook: Book;
+  SendSwapUsertId: number;
 }
 /**
  * Requested =   0,

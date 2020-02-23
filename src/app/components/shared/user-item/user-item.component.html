@@ -1,19 +1,18 @@
-<div class="furniture--4 border--round arrows_style owl-carousel owl-theme row mt--50" >
+<div class="furniture--4 border--round arrows_style owl-carousel owl-theme row mt--50">
     <!-- Start Single Product -->
     <div class="product product__style--3">
         <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-            <div class="product__thumb" >
-                <a class="first__img" href="single-product.html"><img  src="http://demo.devitems.com/boighor-v3/images/books/{{item.id}}.jpg"
-                        alt="product image" ></a>
-                <a class="second__img animation1" href="single-product.html"><img
-                        src="http://demo.devitems.com/boighor-v3/images/books/2.jpg"  alt="product image"></a>
-               
+            <div class="product__thumb">
+
+                <a class="first__img" href="single-product.html"><img [src]="item.User.PhotoUrl" alt="product image"></a>
+                <a class="second__img animation1" href="single-product.html"><img src="http://demo.devitems.com/boighor-v3/images/books/2.jpg" alt="product image"></a>
+
             </div>
             <div class="product__content content--center">
-                <h4><a href="single-product.html">{{item.BName}}</a></h4>
+                <h4><a routerLink="['user',item.User.UserId]">{{item.User.FirstName+' '+item.User.LastName}}</a></h4>
                 <ul class="prize d-flex">
-                    <li>{{item.UName}}</li>
-                    
+
+
                 </ul>
             </div>
         </div>

@@ -1,3 +1,4 @@
+import { RequestItemMin } from "src/app/models/request_item.model";
 import { Book } from "./../../models/book_item.model";
 import { Observable } from "rxjs";
 import { Genre } from "./../../models/genre_book.model";
@@ -14,7 +15,17 @@ export class GenreService {
       params: { orderType, pagSize, PageNumber }
     });
   }
-  getBookByGenreId(id: number): Observable<Book[][]> {
-    return this.http.get<Book[][]>("http://localhost:52558/api/genres/" + id);
+  getBookByGenreId(
+    pageNumber,
+    pageSize,
+    type,
+    genreId
+  ): Observable<RequestItemMin[]> {
+    return this.http.get<RequestItemMin[]>(
+      "http://localhost:52558/api/home/genres",
+      {
+        params: { pageNumber, pageSize, type, genreId }
+      }
+    );
   }
 }
