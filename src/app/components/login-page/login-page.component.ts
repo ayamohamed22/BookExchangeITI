@@ -1,3 +1,4 @@
+import { Router } from "@angular/router";
 import { LoginService } from "./../../services/user/login/login.service";
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
@@ -9,6 +10,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
   styleUrls: ["./login-page.component.css"]
 })
 export class LoginPageComponent {
+  error: boolean = false;
   form = new FormGroup({
     email: new FormControl("", [
       Validators.required,
@@ -19,7 +21,16 @@ export class LoginPageComponent {
   /**
    *
    */
-  constructor(private service: LoginService) {}
+  constructor(private service: LoginService, private router: Router) {
+    service.loggedIn.subscribe(res => {
+      if (res) {
+        this.error = false;
+        router.navigate([""]);
+      } else {
+        this.error = true;
+      }
+    });
+  }
   Email() {
     return this.form.get("email");
   }
@@ -28,6 +39,7 @@ export class LoginPageComponent {
   }
   login(value) {
     this.service.login(value);
+
     // console.log(value);
   }
 }

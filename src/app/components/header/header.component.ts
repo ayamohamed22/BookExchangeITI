@@ -118,4 +118,7 @@ export class HeaderComponent implements OnInit {
     // (click)="test()"
     this.modalService.open(id);
   }
+  logout() {
+    this.login.logout();
+  }
 }

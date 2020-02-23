@@ -1,8 +1,8 @@
 <div class="item01 d-flex mt--20 row justify-content-between">
     <!-- <div class="row justify-content-between"> -->
-    <div class="col-5 center-request-page ">
+    <div [routerLink]="['book',requestItem.RequestedBook.Book_Id]" class="col-5 center-request-page ">
         <!-- <h3>You want</h3> -->
-        <img #BookImage alt="big images" [src]="requestItem.RequestedBook.Photo_Url" width="75" height="94">
+        <img #BookImage alt="big images" [src]="requestItem.RequestedBook.Photo_Url" width="75px" height="94px">
         <span>{{requestItem.RequestedBook.Title}} </span>
     </div>
     <div class="col-2 center-request-page">
@@ -52,9 +52,9 @@
 
         </div>
 
-        <div class="col-5 center-request-page ">
+        <div [routerLink]="['book',requestItem.SendedBook.Book_Id]" class="col-5 center-request-page ">
             <!-- <h3>You Give</h3>  -->
-            <img #BookImage alt="big images " [src]="requestItem.SendedBook.Photo_Url " width="75 " height="94 ">
+            <img #BookImage alt="big images " [src]="requestItem.SendedBook.Photo_Url " width="75px" height="94px">
             <span>{{requestItem.SendedBook.Title}} </span>
         </div>
 

@@ -129,29 +129,13 @@
                     <li *ngIf="showLoginAndSignUp">
                         <span style="margin-left: 10px;"><a routerLink="signup">    Create An Account</a></span>
                     </li>
-                    <li #accountBar *ngIf="!showLoginAndSignUp" class="setting__bar__icon">
+                    <li #accountBar *ngIf="!showLoginAndSignUp" class="setting__bar__icon" [routerLink]="['user',login.getCurrentLogginId()]">
                         <a class="setting__active"></a>
-                        <div class="searchbar__content setting__block">
-                            <div class="content-inner">
-                                <div class="switcher-currency">
-                                    <strong class="label switcher-label">
-                                            <span>My Account</span>
-                                        </strong>
-                                    <div class="switcher-options">
-                                        <div class="switcher-currency-trigger">
-                                            <div class="setting__menu">
-                                                <!-- <span><a href="#">Compare Product</a></span> -->
-                                                <span><a  [routerLink]="['user',login.getCurrentLogginId()]" >My Account</a></span>
-                                                <span><a href="#">My Wishlist</a></span>
-                                                <!-- <span><a href="#">Sign In</a></span>
-                                                <span><a href="#">Create An Account</a></span> -->
-                                                <span><a (click)="login.logout()">Log Out</a></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                    </li>
+                    <li *ngIf="!showLoginAndSignUp">
+                        <a style="margin-right: 10px; margin-left: 10px;" (click)="logout()">Logout</a>
+
                     </li>
                 </ul>
             </div>
