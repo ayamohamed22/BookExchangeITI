@@ -14,6 +14,8 @@ import { ModalService } from "../../shared/_modal";
 export class AddBookComponent implements OnInit {
   @ViewChild("BookImage", { static: true }) bookImage;
   bookImageUrl = "assets/images/product/big-img/1.jpg";
+  selectedBook: Book;
+  st: string = "";
   form = new FormGroup({
     Title: new FormControl(),
     Author_Name: new FormControl(),
@@ -21,7 +23,7 @@ export class AddBookComponent implements OnInit {
     Photo_Url: new FormControl(),
     Want: new FormControl(),
     BookCondition: new FormControl(),
-    Categories: new FormControl()
+    Categor: new FormControl()
     // UserWantBook: new FormControl()
   });
 
@@ -37,22 +39,24 @@ export class AddBookComponent implements OnInit {
 
   selectEvent(item: Book) {
     console.log(item);
+    item.Categories.forEach((val, i) => {
+      if (i != item.Categories.length - 1) {
+        this.st = this.st + val + ",";
+      } else {
+        this.st = this.st + val;
+      }
+    });
     this.form.setValue({
       Title: item.Title,
       Author_Name: item.Author_Name,
       Description: item.Description,
       Photo_Url: item.Photo_Url,
       Want: "have",
-      Categories: item.Categories.map((val, i) => {
-        if (i != item.Categories.length - 1) {
-          return val + ",";
-        } else {
-          return val;
-        }
-      }),
+      Categor: this.st,
       BookCondition: 0
     });
 
+    this.selectedBook = item;
     this.bookImageUrl = item.Photo_Url;
     console.log(this.bookImage.src);
   }
@@ -70,9 +74,12 @@ export class AddBookComponent implements OnInit {
     // do something when input is focused
   }
   addBook() {
-    this.form.value.Categories = this.form.value.Categories.split(",");
-    console.log(this.bookService.addBook(this.form.value));
+    // this.form.value.Categories = this.form.value.Categories.split(",");
+    // console.log();
 
+    // console.log(this.bookService.addBook(this.form.value));
+    // this.bookService.addBook(this.form.value)
+    this.bookService.addBook(this.form.value);
     console.log(this.form.value);
   }
   closeModale(id: string) {

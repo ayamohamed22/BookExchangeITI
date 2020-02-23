@@ -26,6 +26,7 @@ export class RequestItemComponent implements OnInit {
     this.requestsService.acceptRequest(this.requestItem.Id).subscribe(
       res => {
         this.requestItem = res;
+        console.log(res);
       },
       err => {
         console.log(err);
@@ -36,6 +37,7 @@ export class RequestItemComponent implements OnInit {
     this.requestsService.refuseRequest(this.requestItem.Id).subscribe(
       res => {
         this.requestItem = res;
+        console.log(res);
       },
       err => {
         console.log(err);
@@ -46,6 +48,7 @@ export class RequestItemComponent implements OnInit {
     this.requestsService.sendSwapRequest(this.requestItem.Id).subscribe(
       res => {
         this.requestItem = res;
+        console.log(res);
       },
       err => {
         console.log(err);
@@ -53,10 +56,13 @@ export class RequestItemComponent implements OnInit {
     );
   }
   acceptSwap() {
-    this.requestsService.sendSwapRequest(this.requestItem.Id).subscribe(res => {
-      res => {
-        this.requestItem = res;
-      };
-    });
+    this.requestsService
+      .acceptSwapRequest(this.requestItem.Id)
+      .subscribe(res => {
+        res => {
+          this.requestItem = res;
+          console.log(res);
+        };
+      });
   }
 }

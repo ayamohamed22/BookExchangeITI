@@ -15,25 +15,20 @@ export class BooksService {
     return this.http.get<Book[]>(this.baseUrl + "/books");
   }
   addBook(book: Book) {
-    var a = new HttpHeaders(
-      "Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsIkxvZ1VzZXJJZCI6IjEiLCJleHAiOjE1ODIxMzMzNTAsImlzcyI6InNtZXNrLmluIiwiYXVkIjoicmVhZGVycyJ9.AaSRbI3n7D3ecg6CPBUjVRMMWJZjWcTLGmZVuk_YjYE"
-    );
-    this.http
-      .post<Response>(this.baseUrl + "/books", book, {
-        headers: a
-      })
-      .subscribe(
-        res => {
-          if (res.status == 204) {
-            return true;
-          } else {
-            return false;
-          }
-        },
-        err => {
-          console.log(err);
+    var a = new HttpHeaders();
+    // "Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsIkxvZ1VzZXJJZCI6IjEiLCJleHAiOjE1ODIxMzMzNTAsImlzcyI6InNtZXNrLmluIiwiYXVkIjoicmVhZGVycyJ9.AaSRbI3n7D3ecg6CPBUjVRMMWJZjWcTLGmZVuk_YjYE"
+    this.http.post<Response>(this.baseUrl + "/books", book).subscribe(
+      res => {
+        if (res.status == 204) {
+          return true;
+        } else {
+          return false;
         }
-      );
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
   getBookById(id: number): Observable<Book> {
     return this.http.get<Book>(this.baseUrl + "/Books/" + id);

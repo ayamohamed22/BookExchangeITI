@@ -48,13 +48,13 @@ export class RequestsService {
   }
   sendSwapRequest(requestId): Observable<RequestItemMin> {
     return this.http.put<RequestItemMin>(
-      "http://localhost:52558/api/Request/RequestSwap?id=" + requestId,
+      "http://localhost:52558/api/Requests/RequestSwap?id=" + requestId,
       { id: requestId }
     );
   }
   acceptSwapRequest(requestId): Observable<RequestItemMin> {
     return this.http.put<RequestItemMin>(
-      "http://localhost:52558/api/Request/AcceptSwap?id=" + requestId,
+      "http://localhost:52558/api/Requests/AcceptSwap?id=" + requestId,
       { id: requestId }
     );
   }

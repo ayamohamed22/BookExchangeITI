@@ -7,4 +7,5 @@ export class Book {
   Description: string;
   BookCondition: string;
   Categories: string[];
+  Categor: string;
 }

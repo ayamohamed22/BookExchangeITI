@@ -12,6 +12,12 @@
         <div>
             <h5><i class="fa fa-exchange" aria-hidden="true"></i></h5>
         </div>
+        <div *ngIf="requestItem.RequestStatus==3" class=" row justify-content-center ">
+            <!-- <h4 (click)="sendSwapRequest() " class="col-12 " style="padding: 0px; ">Swap It?</h4> -->
+            <!-- <h4 (click)="refuse() " class="col-3 " style="padding: 0px; "><i class="fa fa-times " aria-hidden="true "></i></h4> -->
+            <h6 style="padding: 0px;">swapped</h6>
+
+        </div>
         <div *ngIf="requestItem.RequestStatus==0 && requestItem.RequestedUser.UserId==loginService.getCurrentLogginId()" class="row justify-content-between">
             <span> Request?</span>
             <h4 (click)="accept()" class="col-6" style="padding: 0px;"><i class="fa fa-check" aria-hidden="true"></i></h4>
@@ -21,38 +27,41 @@
             <h4 (click)="sendSwapRequest() " class="col-12 " style="padding: 0px; ">Swap It?</h4>
             <!-- <h4 (click)="refuse() " class="col-3 " style="padding: 0px; "><i class="fa fa-times " aria-hidden="true "></i></h4> -->
         </div>
-        <div *ngIf="requestItem.RequestStatus==1 && requestItem.SendSwapUsertId!=loginService.getCurrentLogginId()  " class="row justify-content-between ">
+        <div *ngIf="requestItem.RequestStatus==1 && requestItem.SendSwapUsertId != loginService.getCurrentLogginId()  " class="row justify-content-between ">
             <span>Swap ?</span>
             <h4 (click)="acceptSwap() " class="col-3 " style="padding: 0px; "><i class="fa fa-check " aria-hidden="true "></i></h4>
             <h4 (click)="refuse() " class="col-3 " style="padding: 0px; "><i class="fa fa-times " aria-hidden="true "></i></h4>
-
         </div>
-        <div *ngIf="requestItem.RequestStatus==4 " class="row justify-content-between ">
-            <span>Refused</span>
-        </div>
-        <div class="my__account__wrapper ">
-            <!-- <div class="account__form ">
+        <div *ngIf="requestItem.RequestStatus==1  && requestItem.SendSwapUsertId==loginService.getCurrentLogginId()" class="row justify-content-between ">
+            <span>waiting for accept swap</span>
+            < </div>
+                <div *ngIf="requestItem.RequestStatus==4 " class="row justify-content-between ">
+                    <span>Refused</span>
+                </div>
+                <div class="my__account__wrapper ">
+                    <!-- <div class="account__form ">
                         <div class="form__btn ">
                             <button type="button "> Request</button>
                         </div>
                     </div> -->
 
+                </div>
+                <div>
+                    <!-- {{error}} -->
+                </div>
+
         </div>
-        <div>
-            <!-- {{error}} -->
+
+        <div class="col-5 center-request-page ">
+            <!-- <h3>You Give</h3>  -->
+            <img #BookImage alt="big images " [src]="requestItem.SendedBook.Photo_Url " width="75 " height="94 ">
+            <span>{{requestItem.SendedBook.Title}} </span>
         </div>
 
-    </div>
-    <div class="col-5 center-request-page ">
-        <!-- <h3>You Give</h3>  -->
-        <img #BookImage alt="big images " [src]="requestItem.SendedBook.Photo_Url " width="75 " height="94 ">
-        <span>{{requestItem.SendedBook.Title}} </span>
-    </div>
+        <!-- </div> -->
+        <!-- </div> -->
 
-    <!-- </div> -->
-    <!-- </div> -->
-
-    <!-- <div class="thumb ">
+        <!-- <div class="thumb ">
         <a href="product-details.html "><img src="{{requestItem.RequestedBook.Photo_Url}} " alt="product images "></a>
     </div>
     <div class="content ">
@@ -66,4 +75,4 @@
             </ul>
         </div>
     </div> -->
-    <!-- </div> -->
+        <!-- </div> -->
