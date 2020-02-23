@@ -7,4 +7,5 @@ export class User {
   PhotoUrl : string;
   Email : string;
   Rate: number;
+  Blocked : boolean;
 }

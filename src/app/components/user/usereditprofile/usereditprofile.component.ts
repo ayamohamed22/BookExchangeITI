@@ -19,14 +19,15 @@ export class UsereditprofileComponent implements OnInit {
   
     let userId=this.router.snapshot.parent.params['id'];
     this.service.getById(userId).subscribe(res=>{
-      this.user = res;
+      this.user = res[0];
+     
       this.loaded = true;
     });
    
   }
   
   updateUser(userForm){
-
+    
     let userId=this.router.snapshot.parent.params['id'];
     let user=this.user;
     // console.log(userId);

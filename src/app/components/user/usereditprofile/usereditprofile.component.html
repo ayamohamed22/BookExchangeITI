@@ -7,7 +7,10 @@
       <!-- left column -->
       <div class="col-md-5">
         <div class="text-center data">
-          <img src="assets/images/user.png" class="avatar img-circle" alt="logo">
+          <img src='{{user?.PhotoUrl}}' 
+          style="width: 150px; height:150px; border-radius: 50%;" class="avatar
+           img-circle" alt='{{user?.FirstName}}'/>
+          <br><br>
           <h5>Upload other photo...</h5>
           <input type="file" class="form-control" name="image">
         </div>

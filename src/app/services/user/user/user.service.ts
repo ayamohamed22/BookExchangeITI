@@ -9,6 +9,7 @@ import { User } from 'src/app/models/user.model';
 import { Observable } from 'rxjs';
 import { JsonPipe } from '@angular/common';
 import { Chat, ChatContainer } from 'src/app/models/chat.model';
+import { Complain } from 'src/app/models/complains.model';
 
 
 @Injectable({
@@ -56,6 +57,11 @@ export class UserService {
 
     return this.http.get<ChatContainer[]>('http://localhost:52558/api/chat/getChatByConversationId?conversationId='+convensionId);
 
+  }
+  
+  getAllComplains(): Observable<Complain[]>
+  {
+    return this.http.get<Complain[]>('http://localhost:52558/api/report');
   }
 }
 

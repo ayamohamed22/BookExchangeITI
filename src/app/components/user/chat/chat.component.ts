@@ -18,7 +18,7 @@ export class ChatComponent implements OnInit {
     let id=this.router.params.subscribe(params=>{
       this.service.getChat(params['id']).subscribe((res:ChatContainer[])=>{
         this.chats = [...res];
-        console.log(this.chats);
+       // console.log(this.chats);
     })
       //  console.log(this.chats);
       this.loaded = true;

@@ -6,18 +6,16 @@
         <th scope="col">Sender User</th>
         <th scope="col">Reported User</th>
         <th scope="col">Complaint</th>
-        <th scope="col">Status</th>
+        <!-- <th scope="col">Status</th> -->
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>user1</td>
-        <td>reported1</td>
-        <td>dddddd</td>
-        <td>
-        <button class="btn btn-danger">Block</button> 
-       </td>
+      <tr *ngFor="let complaint of complains">
+        <th scope="row">{{complaint.Id}}</th>
+        <td [routerLink]="['/user/',complaint.SenderUser.UserId,'profile']">{{complaint.SenderUser.FirstName}} {{complaint.ReportedUser.LastName}}</td>
+        <td [routerLink]="['/user/',complaint.ReportedUser.UserId,'profile']">{{complaint.ReportedUser.FirstName}} {{complaint.ReportedUser.LastName}}</td>
+        <td>{{complaint.Complain}}</td>
+        <!-- <td><button [ngClass] = " " >{{complaint.SenderUser.Blocked}}</button></td> -->
       </tr>
     </tbody>
   </table>

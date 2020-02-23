@@ -26,9 +26,4 @@ export class SearchchatComponent implements OnInit {
     });
    
   }
-
-  logchat(item){
-    console.log(item);
-    
-  }
 }
