@@ -1,3 +1,4 @@
+import { LoginService } from "./../../services/user/login/login.service";
 import { Component, OnInit } from "@angular/core";
 import { RouterLinkActive, Router, ActivatedRoute } from "@angular/router";
 
@@ -7,8 +8,15 @@ import { RouterLinkActive, Router, ActivatedRoute } from "@angular/router";
   styleUrls: ["./user.component.css"]
 })
 export class UserComponent implements OnInit {
-  // userId: number;
-  constructor(private router: ActivatedRoute) {}
+  userId: number;
+  constructor(
+    private router: ActivatedRoute,
+    private loginService: LoginService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.router.params.subscribe(params => {
+      this.userId = params["id"];
+    });
+  }
 }

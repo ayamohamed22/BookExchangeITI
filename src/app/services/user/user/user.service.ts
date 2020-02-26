@@ -48,7 +48,7 @@ export class UserService {
   getUserWantBook(pageNumber, pageSize, userId?): Observable<UserHaveBook> {
     if (!userId) {
       userId = -1;
-    }
+    } 
     return this.http.get<UserHaveBook>("http://localhost:52558/api/home/want", {
       params: { userId, pageNumber, pageSize }
     });
@@ -58,10 +58,9 @@ export class UserService {
       "http://localhost:52558/api/user?id=" + userId + "&type=full)"
     );
   }
-  //update(user :User) :Observable<User>{
-
-  //  return this.http.patch<User>('http://localhost:52558/Help/Api/PUT-api-User/'++);
-  //}
+  update(user: User): Observable<User> {
+    return this.http.put<User>("http://localhost:52558/api/user/putUser", user);
+  }
   getUserById(userId: number): Observable<User> {
     console.log(userId);
 

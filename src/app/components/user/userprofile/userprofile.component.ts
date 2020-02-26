@@ -16,7 +16,10 @@ export class UserprofileComponent implements OnInit {
     console.log();
     let userId = this.router.snapshot.parent.params["id"];
     this.service.getUserById(userId).subscribe(res => {
-      this.user = res[0];
+      console.log(res);
+
+      this.user = res;
+      console.log(this.user);
     });
   }
 }

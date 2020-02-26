@@ -46,7 +46,7 @@
 
 
 
-<div class="row">
+<div class="row" style="height: 1340px;">
     <div class="col-sm-4 ">
         <div class="wrapper ">
 
@@ -72,7 +72,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="editprofile" class="nav-link">
+                            <a *ngIf="loginService.isLoggedInNew() && loginService.getCurrentLogginId()== userId" routerLink="editprofile" class="nav-link">
                                 <i class="fa fa-pencil-square-o"></i> Edit Profile
                             </a>
                         </li>
@@ -88,12 +88,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="searchchat" class="nav-link">
+                            <a *ngIf="loginService.isLoggedInNew() && loginService.getCurrentLogginId()== userId" routerLink="searchchat" class="nav-link">
                                 <i class="fa far fa-comments"></i> Chat
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="complaint" class="nav-link">
+                            <a *ngIf="false" routerLink="complaint" class="nav-link">
                                 <i class="fa far fa-files-o"></i> Complaints
                             </a>
                         </li>

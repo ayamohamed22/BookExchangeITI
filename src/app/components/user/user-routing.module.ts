@@ -26,7 +26,7 @@ const routes: Routes = [
         component: SearchchatComponent,
         children: [{ path: ":id", component: ChatComponent }]
       },
-      { path: "complaint", component: ComplaintsComponent },
+      // { path: "complaint", component: ComplaintsComponent },
       { path: "requests", component: RequestsPageComponent }
     ]
   }
