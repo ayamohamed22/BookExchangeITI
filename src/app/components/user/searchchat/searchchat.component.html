@@ -1,0 +1,42 @@
+<div class="container">
+    <!-- <h3 >Messaging</h3> -->
+    <div class="messaging">
+        <div class="inbox_msg" style="width: 850px;">
+            <div class="inbox_people">
+                <div class="headind_srch">
+                    <div class="recent_heading">
+                        <h4>Recent</h4>
+                    </div>
+                    <!-- <div class="srch_bar">
+                        <div class="stylish-input-group">
+                            <input type="text" class="search-bar" placeholder="Search">
+                            <span class="input-group-addon">
+                                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                            </span> </div>
+                    </div> -->
+                </div>
+               
+                <div class="inbox_chat">
+                    
+                    <div class="chat_list active_chat" *ngFor="let chat of chats">
+                        <div class="chat_people" [routerLink]="[chat.conversationId]">
+                            <!-- {{logchat(chat.chat)}}
+                            {{chat?.chat?.RecieverUser.FirstName}} -->
+                            <div class="chat_img" > 
+                                 <img src='{{chat?.chat?.RecieverUser.PhotoUrl}}'
+                                class="img-circle" style="width:100px; height:40px;" alt='{{chat?.chat?.RecieverUser.FirstName}}'>
+                             </div>
+                            <div class="chat_ib">
+                                <h5>{{chat?.chat?.RecieverUser.FirstName}} {{chat?.chat?.RecieverUser.LastName}} <span class="chat_date">{{chat?.chat?.DateOfMessage}}</span></h5>
+                                <p>{{chat?.chat?.Message}}</p>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                
+            </div>
+            
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

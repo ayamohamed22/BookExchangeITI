@@ -5,19 +5,26 @@
 google fonts
 */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Rubik:300,400,500,700,900');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800');
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Rubik:300,400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
 
+/*user*/
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 /*Plugins*/
 
 @import "~bootstrap/dist/css/bootstrap.min.css";
-@import '~font-awesome/css/font-awesome.min.css';
-
-/* @import 'assets/css/plugins.css'; */
-
+@import "~font-awesome/css/font-awesome.min.css";
+@import "assets/css/plugins.css";
+@import "~jquery-ui-dist/jquery-ui.min.css";
+@import "assets/css/plugins/lightbox.css";
 
 /*styles*/
 
-@import 'assets/css/style.css';
+@import "assets/css/style.css";
+
+  @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons");
+ @import url("https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");
+ 
+  @import "assets/css/material-dashboard.css";

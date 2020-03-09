@@ -1,0 +1,16 @@
+<div class="brown--color box-search-content search_active block-bg close__top">
+    <form id="search_mini_form" class="minisearch" action="#">
+        <div class="field__search">
+            <input type="text" placeholder="Search entire store here..." ngModel name="q" #q='ngModel' >
+            <div class="action">
+                <a routerLink="search/{{q.value}}">
+                    <!-- <i class="zmdi zmdi-search"></i> -->
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </form>
+    <div class="close__wrap">
+        <span>close</span>
+    </div>
+</div>

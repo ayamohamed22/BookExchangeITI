@@ -1,0 +1,65 @@
+<div class="ht__bradcaump__area bg-image--6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">Details</h2>
+                    <nav class="bradcaump-content">
+                        <a class="breadcrumb_item" routerLink="">Home</a>
+                        <span class="brd-separetor">/</span>
+                        <span class="breadcrumb_item active">Details</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="maincontent bg--white pt--80 pb--55">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-12">
+                <div class="wn__single__product">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="wn__fotorama__wrapper">
+                                <img src="{{book.Photo_Url}}">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="product__info__main">
+                                <h1>{{book.Title}}</h1>
+                                <div class="product-reviews-summary d-flex">
+                                    <ul class="rating-summary d-flex">
+                                        <li><i class="zmdi zmdi-star-outline"></i></li>
+                                        <li><i class="zmdi zmdi-star-outline"></i></li>
+                                        <li><i class="zmdi zmdi-star-outline"></i></li>
+                                        <li class="off"><i class="zmdi zmdi-star-outline"></i></li>
+                                        <li class="off"><i class="zmdi zmdi-star-outline"></i></li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="price-box">
+                                    <span>$52.00</span>
+                                </div> -->
+                                <div class="product__overview">
+                                    <p>{{book.Description}}</p>
+                                </div>
+
+                                <div class="product_meta">
+                                    <span class="posted_in">Categories:
+                                        <a href="#">Adventure</a>,
+                                        <a href="#">Kids' Music</a>
+                                    </span>
+                                </div>
+                                <div class="product__info__detailed">
+
+                                    <div class="pro_details_nav nav justify-content-start" role="tablist" style="width: 500px;">
+                                        <p>User have Book</p>
+                                        <app-user-list [item]="userHaveBook.users"></app-user-list>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

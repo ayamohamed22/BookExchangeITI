@@ -1,16 +1,78 @@
-<div class="item01 d-flex mt--20">
-    <div class="thumb">
-        <a href="product-details.html"><img src="{{requestItem.bookImage}}" alt="product images"></a>
+<div class="item01 d-flex mt--20 row justify-content-between">
+    <!-- <div class="row justify-content-between"> -->
+    <div [routerLink]="['book',requestItem.RequestedBook.Book_Id]" class="col-5 center-request-page ">
+        <!-- <h3>You want</h3> -->
+        <img #BookImage alt="big images" [src]="requestItem.RequestedBook.Photo_Url" width="75px" height="94px">
+        <span>{{requestItem.RequestedBook.Title}} </span>
     </div>
-    <div class="content">
-        <h6><a href="product-details.html">{{requestItem.bookName}}</a></h6>
-        <a href="#" class="prize">{{requestItem.senderUserName}}</a>
-        <div class="product_prize d-flex justify-content-between">
-            <span class="qun"></span>
-            <ul class="d-flex justify-content-end">
-                <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
+    <div class="col-2 center-request-page">
+        <span>
+                    {{requestItem.SenderUser.FirstName}}
+                </span>
+        <div>
+            <h5><i class="fa fa-exchange" aria-hidden="true"></i></h5>
+        </div>
+        <div *ngIf="requestItem.RequestStatus==3" class=" row justify-content-center ">
+            <!-- <h4 (click)="sendSwapRequest() " class="col-12 " style="padding: 0px; ">Swap It?</h4> -->
+            <!-- <h4 (click)="refuse() " class="col-3 " style="padding: 0px; "><i class="fa fa-times " aria-hidden="true "></i></h4> -->
+            <h6 style="padding: 0px;">swapped</h6>
+
+        </div>
+        <div *ngIf="requestItem.RequestStatus==0 && requestItem.RequestedUser.UserId==loginService.getCurrentLogginId()" class="row justify-content-between">
+            <span> Request?</span>
+            <h4 (click)="accept()" class="col-6" style="padding: 0px;"><i class="fa fa-check" aria-hidden="true"></i></h4>
+            <h4 (click)="refuse()" class="col-6" style="padding: 0px;"><i class="fa fa-times" aria-hidden="true"></i></h4>
+        </div>
+        <div *ngIf="requestItem.RequestStatus==2" class=" row justify-content-between ">
+            <h4 (click)="sendSwapRequest() " class="col-12 " style="padding: 0px; ">Swap It?</h4>
+            <!-- <h4 (click)="refuse() " class="col-3 " style="padding: 0px; "><i class="fa fa-times " aria-hidden="true "></i></h4> -->
+        </div>
+        <div *ngIf="requestItem.RequestStatus==1 && requestItem.SendSwapUsertId != loginService.getCurrentLogginId()  " class="row justify-content-between ">
+            <span>Swap ?</span>
+            <h4 (click)="acceptSwap() " class="col-3 " style="padding: 0px; "><i class="fa fa-check " aria-hidden="true "></i></h4>
+            <h4 (click)="refuse() " class="col-3 " style="padding: 0px; "><i class="fa fa-times " aria-hidden="true "></i></h4>
+        </div>
+        <div *ngIf="requestItem.RequestStatus==1  && requestItem.SendSwapUsertId==loginService.getCurrentLogginId()" class="row justify-content-between ">
+            <span>waiting for accept swap</span>
+            < </div>
+                <div *ngIf="requestItem.RequestStatus==4 " class="row justify-content-between ">
+                    <span>Refused</span>
+                </div>
+                <div class="my__account__wrapper ">
+                    <!-- <div class="account__form ">
+                        <div class="form__btn ">
+                            <button type="button "> Request</button>
+                        </div>
+                    </div> -->
+
+                </div>
+                <div>
+                    <!-- {{error}} -->
+                </div>
+
+        </div>
+
+        <div [routerLink]="['book',requestItem.SendedBook.Book_Id]" class="col-5 center-request-page ">
+            <!-- <h3>You Give</h3>  -->
+            <img #BookImage alt="big images " [src]="requestItem.SendedBook.Photo_Url " width="75px" height="94px">
+            <span>{{requestItem.SendedBook.Title}} </span>
+        </div>
+
+        <!-- </div> -->
+        <!-- </div> -->
+
+        <!-- <div class="thumb ">
+        <a href="product-details.html "><img src="{{requestItem.RequestedBook.Photo_Url}} " alt="product images "></a>
+    </div>
+    <div class="content ">
+        <h6><a href="product-details.html ">{{requestItem.RequestedBook.Title}}</a></h6>
+        <a href="# " class="prize ">{{requestItem.SenderUser.FirstName+" "+requestItem.SenderUser.LastName}}</a>
+        <div class="product_prize d-flex justify-content-between ">
+            <span class="qun "></span>
+            <ul class="d-flex justify-content-end ">
+                <li><a href="# "><i class="fa fa-check " aria-hidden="true "></i></a></li>
+                <li><a href="# "><i class="fa fa-trash " aria-hidden="true "></i></a></li>
             </ul>
         </div>
-    </div>
-</div>
+    </div> -->
+        <!-- </div> -->

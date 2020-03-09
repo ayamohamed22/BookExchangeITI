@@ -1,0 +1,21 @@
+.imgTop
+{
+    position: relative;
+    top:230px;
+    left:60px;
+}
+.sidebar{
+    position: absolute;
+    top:140px;
+    left: 42px;
+    height: 445px;
+}
+.data{
+    overflow: hidden;
+}
+.col-sm-8{
+    position: relative;
+    top:150px;
+    
+}
+  

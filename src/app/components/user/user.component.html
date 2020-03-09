@@ -1,0 +1,286 @@
+<div class="ht__bradcaump__area bg-image--6">
+    <div class="imgTop">
+        <img src="assets/images/user.png">
+    </div>
+</div>
+
+
+
+
+<!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+<!-- <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+          CT
+        </a>
+        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          Creative Tim
+        </a>
+      </div> -->
+<!-- <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li> -->
+<!-- your sidebar here -->
+<!-- </ul>
+      </div>
+    </div> -->
+
+<!-- End Navbar -->
+<!-- <div class="content col-sm-8">
+        <div class="container-fluid">
+           your content here -->
+<!-- <router-outlet></router-outlet> -->
+
+<!-- </div>
+      </div> -->
+
+
+
+
+
+<div class="row" style="height: 1340px;">
+    <div class="col-sm-4 ">
+        <div class="wrapper ">
+
+            <div class="sidebar" data-color="purple" data-background-color="white">
+                <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+
+                <div class="sidebar-wrapper data">
+                    <ul class="nav">
+                        <li class="nav-item active  ">
+                            <a class="nav-link" routerLink="">
+                                <i class="material-icons">dashboard</i>
+                                <p>Home</p>
+                            </a>
+                        </li>
+                        <!-- your sidebar here -->
+                        <li class="nav-item">
+                            <a [routerLink]="['profile']" class="nav-link">
+                                <i class="fa fa-user fa-lg"></i> Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a *ngIf="loginService.isLoggedInNew() && loginService.getCurrentLogginId()== userId" routerLink="editprofile" class="nav-link">
+                                <i class="fa fa-pencil-square-o"></i> Edit Profile
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a routerLink="havedbooks" class="nav-link">
+                                <i class="fa fas fa-book"></i> My Books
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="wantedbooks" class="nav-link">
+                                <i class="fa far fa-heart"></i> Wishlists
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a *ngIf="loginService.isLoggedInNew() && loginService.getCurrentLogginId()== userId" routerLink="searchchat" class="nav-link">
+                                <i class="fa far fa-comments"></i> Chat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a *ngIf="false" routerLink="complaint" class="nav-link">
+                                <i class="fa far fa-files-o"></i> Complaints
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="col-sm-8"> -->
+
+    <div class="main-panel col-sm-8">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button> -->
+            <!-- <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:;">
+                  <i class="material-icons">notifications</i> Notifications
+                </a>
+              </li>
+              your navbar here -->
+            <!-- <router-outlet></router-outlet>
+
+            </ul>
+          </div> -->
+        </nav>
+    </div>
+
+    <!-- </div> -->
+</div>
+
+
+
+<!-- End Navbar -->
+<!-- <div class="content">
+        <div class="container-fluid">
+          your content here -->
+<!-- </div>
+      </div> -->
+<!-- <footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="https://www.creative-tim.com">
+                  Creative Tim
+                </a>
+              </li>
+            </ul>
+          </nav> -->
+<!-- <div class="col-sm-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  -->
+
+
+
+
+
+<!-- <div class="ht__bradcaump__area bg-image--6">
+  <div class="imgTop">
+    <img src="assets/images/user.png">
+  </div>
+</div>
+
+ -->
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!--
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+-->
+
+<!-- SIDEBAR USERPIC -->
+<!-- <div class="profile-userpic">
+					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+				</div> -->
+<!-- END SIDEBAR USERPIC -->
+<!-- SIDEBAR USER TITLE -->
+<!-- <div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Marcus Doe
+					</div>
+					<div class="profile-usertitle-job">
+						Developer
+					</div>
+				</div> -->
+<!-- END SIDEBAR USER TITLE -->
+<!-- SIDEBAR BUTTONS -->
+<!-- <div class="profile-userbuttons">
+					<button type="button" class="btn btn-success btn-sm">Follow</button>
+					<button type="button" class="btn btn-danger btn-sm">Message</button>
+				</div> -->
+<!-- END SIDEBAR BUTTONS -->
+<!-- SIDEBAR MENU -->
+
+
+<!--<div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">My Account</h2>
+                    <nav class="bradcaump-content">
+                        <a class="breadcrumb_item" routerLink="">Home</a>
+                        <span class="brd-separetor">/</span>
+                        <span class="breadcrumb_item active">My Account</span>
+                    </nav>
+                </div>
+            </div>
+            
+        </div> -->
+
+<!-- </div>
+</div> -->
+
+<!-- <div class="containerdiv"> -->
+
+<!-- <div class="nav-side-menu"> -->
+<!-- <div class="">
+            <div class="brand1">
+                <img src="assets/images/user.png" class="img-circle" />
+                <div>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+
+            </div>
+            <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+            <div class="menu-list">
+
+                <ul id="menu-content" class="menu-content collapse out">
+                    <li>
+                        <a [routerLink]="['profile']">
+                            <i class="fa fa-user fa-lg"></i> Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['editprofile']">
+                            <i class="fa fa-pencil-square-o"></i> Edit Profile
+                        </a>
+                    </li>
+
+                    <li>
+                        <a routerLink="havedbooks">
+                            <i class="fa fas fa-book"></i> My Books
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="wantedbooks">
+                            <i class="fa far fa-heart"></i> Wishlists
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="searchchat">
+                            <i class="fa far fa-comments"></i> Chat
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="complaint">
+                            <i class="fa far fa-files-o"></i> Complaints
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="requests">
+                            <i class="fa far fa-files-o"></i> Complaints
+                        </a>
+                    </li>
+
+                </ul>
+            </div> -->
+<!-- </div> -->

@@ -1,0 +1,20 @@
+<div class="block-minicart minicart__active" [ngClass]="{'is-visible': showRequests}">
+    <div class="minicart-content-wrapper">
+        <div class="micart__close" (click)="onCloseClick()">
+            <span>close</span>
+            <i class="fa fa-window-close-o fa-1x" aria-hidden="true"></i>
+        </div>
+        <div class="items-total d-flex justify-content-between">
+            <span>3 Requests</span>
+        </div>
+
+        <div class="single__items">
+            <div class="miniproduct">
+                <app-chat-item *ngFor="let item of listOfRequests" [requestItem]=item></app-chat-item>
+            </div>
+        </div>
+        <div class="mini_action cart">
+            <a class="cart__btn" href="cart.html">View and edit cart</a>
+        </div>
+    </div>
+</div>

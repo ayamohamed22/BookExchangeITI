@@ -1,0 +1,25 @@
+<div class="mesgs">
+    <div class="msg_history" *ngFor="let chat of chats">
+        <div class="incoming_msg">
+            <div *ngIf="chat.SenderUser.UserId != loginsService.getCurrentLogginId()" class="incoming_msg_img"> <img src='{{chat?.RecieverUser.PhotoUrl}}' class="img-circle" style="width:100px; height:40px;" alt='{{chat?.RecieverUser.PhotoUrl}}'>
+            </div>
+            <div *ngIf="chat.SenderUser.UserId != loginsService.getCurrentLogginId()" [ngClass]="{'received_msg': chat.SenderUser.UserId != loginsService.getCurrentLogginId() }">
+                <div class="received_withd_msg">
+                    <p>{{chat?.Message}}</p>
+                    <span class="time_date"> {{chat?.DateOfMessage}}</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="chat.SenderUser.UserId == loginsService.getCurrentLogginId()" [ngClass]="{'outgoing_msg': chat.SenderUser.UserId == loginsService.getCurrentLogginId() }">
+            <div class="sent_msg">
+                <p>{{chat?.Message}}</p>
+                <span class="time_date"> {{chat?.DateOfMessage}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="type_msg">
+        <div class="input_msg_write" style="{bottom: 0px}">
+            <input type="text" class="write_msg" placeholder="Type a message" />
+            <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+        </div>
+    </div>

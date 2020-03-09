@@ -1,0 +1,71 @@
+<div class="ht__bradcaump__area bg-image--5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">LogIn</h2>
+                    <nav class="bradcaump-content">
+                        <a class="breadcrumb_item" href="">Home</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+            <h3>Login Form</h3>
+            <form [formGroup]="form">
+                <div class="form-group">
+                    <input formControlName="email" id="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" class="form-control" placeholder="Your Email*" />
+
+                    <div *ngIf=" form.controls.email?.touched&&form.controls.email?.errors?.Pattern" class="alert alert-danger">
+                        E-mail doesn't match the pattern! </div>
+                </div>
+                <div class="form-group">
+                    <input formControlName="Password" id="password" type="password" class="form-control" placeholder="Your Password*" />
+                    <div *ngIf="form.controls.Password.touched&& !form.controls.Password.valid" class="alert alert-danger">This feild is required </div>
+
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                </div>
+                <div class="form-group">
+                    <a href="#" class="ForgetPwd">Forget Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container mt--20 pt--80 pb--55 bg--white">
+    <div class="row justify-content-center ">
+        <div class="my__account__wrapper col-6 ">
+            <form [formGroup]="form" (ngSubmit)="login(form.value)">
+                <div class="account__form">
+                    <div class="input__box">
+                        <label>Username or email address <span>*</span></label>
+                        <input formControlName="email" id="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" class="form-control" placeholder="Your Email*" />
+                        <div *ngIf="form.controls.email?.touched && !form.controls.email?.valid" class="alert alert-danger">
+                            This Field Required
+                        </div>
+                    </div>
+                    <div class="input__box">
+                        <label>Password<span>*</span></label>
+                        <input formControlName="password" id="password" type="password" class="form-control" placeholder="Your Password*" />
+                        <div *ngIf="form.controls.password.touched&& !form.controls.password.valid" class="alert alert-danger">This feild is required </div>
+
+                    </div>
+                    <div class="form__btn">
+                        <button>Login</button>
+
+                    </div>
+                    <a *ngIf="error">Failed To Login In Check Your Email And Password</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

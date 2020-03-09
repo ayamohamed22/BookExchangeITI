@@ -1,0 +1,36 @@
+/*start edit profile*/
+
+.edit-profile h1{
+    color: rgb(48, 75, 86);
+    font-family: cursive;
+    font-weight: bold;
+}
+.edit-profile h1{
+    color: rgb(48, 75, 86);
+}
+.edit-profile .img-circle{
+    width: 150px;
+}
+.edit-profile input{
+    border-radius: 50px;
+}
+.edit-profile label{
+    color: rgb(48, 75, 86);
+}
+.edit-profile .form-control{
+    color: rgb(48, 75, 86);
+}
+/*end edit profile*/
+.container{
+}
+.data{
+    margin: 20px 20px 20px 20px;
+    padding: 30px 20px 10px 10px;
+}
+.dataform{
+   
+    padding: 0px 10px 10px 60px;
+}
+.dataform .btn{
+    margin: 0px 5px 0px 5px;
+}

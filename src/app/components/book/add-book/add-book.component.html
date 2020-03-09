@@ -1,0 +1,90 @@
+<div class="modal-header modal__header">
+    <h1>ADD Book</h1>
+    <button (click)="closeModale('addBook')" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+    <div class="modal-product">
+        <form #Add_Book_Form class="modal-product" [formGroup]="form" (ngSubmit)="addBook()">
+            <!-- Start product images -->
+            <div class="product-images add_book__form__product_Image">
+                <div class="main-image images">
+                    <img #BookImage alt="big images" [src]="bookImageUrl" width="342px" height="500px">
+                    <input type="file" name="image_location" id="image_location" placeholder="Choose Image">
+                </div>
+            </div>
+            <!-- end product images -->
+            <div class="product-info add_book__form__product_Info">
+                <div class="my__account__wrapper">
+
+                    <div class="account__form add_book__form">
+
+                        <div class="input__box">
+                            <label>Quick Search<span></span></label>
+                            <ng-autocomplete [data]="data" [searchKeyword]="keyword" (selected)='selectEvent($event)' (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate">
+                            </ng-autocomplete>
+                            <ng-template #itemTemplate let-item>
+                                <a [innerHTML]="item.Title"></a>
+                            </ng-template>
+                            <ng-template #notFoundTemplate let-notFound>
+                                <div [innerHTML]="notFound"></div>
+                            </ng-template>
+                        </div>
+                        <br>
+                        <div class="input__box">
+                            <label>Title<span>*</span></label>
+                            <input type="text" placeholder="Enter Title " formControlName="Title">
+                        </div>
+                        <div class="input__box">
+                            <label>Author Name<span>*</span></label>
+                            <input type="text" placeholder="Enter Author Name" formControlName="Author_Name">
+                        </div>
+                        <div class="input__box">
+                            <label>Genres<span>*</span></label>
+                            <input type="text" placeholder="Enter List Of Genres as genre1,genre2....." formControlName="Categor">
+                        </div>
+                        <div class="input__box">
+                            <label>Description<span>*</span></label>
+                            <textarea rows="4" cols="75" name="description" placeholder="Enter Descritipn of book" formControlName="Description"></textarea>
+                        </div>
+                        <label class="label-for-checkbox">
+                            <input id="want_book" class="input-checkbox" name="Want" value="want" formControlName="Want" type="radio">
+                            <span>  I Want this book</span>
+                        </label>
+                        <br>
+
+                        <label class="label-for-checkbox">
+                            <input id="heve_book" class="input-checkbox" name="Want" value="have" formControlName="Want" type="radio">
+                            <span>  I have this book</span>
+                        </label>
+                        <br>
+                        <div *ngIf="form.value['Want']=='have'" style="display: flex; align-items: center;">
+                            <label class="label-for-checkbox">
+                                <input id="heve_book" class="input-checkbox" name="BookCondition" value="0" formControlName="BookCondition" type="radio">
+                                <span>New</span>
+                            </label>
+                            <label class="label-for-checkbox">
+                                <input id="heve_book" class="input-checkbox" name="BookCondition" value="1" formControlName="BookCondition" type="radio">
+                                <span>Good</span>
+                            </label>
+                            <label class="label-for-checkbox">
+                                <input id="heve_book" class="input-checkbox" name="BookCondition" value="2" formControlName="BookCondition" type="radio">
+                                <span>Fair</span>
+                            </label>
+                            <label class="label-for-checkbox">
+                                <input id="heve_book" class="input-checkbox" name="BookCondition" value="3" formControlName="BookCondition" type="radio">
+                                <span>Old</span>
+                            </label>
+                        </div>
+                        <br>
+                        <div class="form__btn">
+                            <button>Add</button>
+                            <input type="submit" value="Add">
+                        </div>
+                    </div>
+                    <!-- </form> -->
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

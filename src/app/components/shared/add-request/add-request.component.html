@@ -1,0 +1,118 @@
+<div class="modal-header modal__header">
+
+    <h2>Make Request with {{bindUser.FirstName}} {{bindUser.LastName}}</h2>
+    <button (click)="closeModale('addRequest')" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+    <div class="row justify-content-between">
+        <div class="col-4 center-request-page">
+            <h3>You want</h3>
+            <img #BookImage alt="big images" [src]="bindBook.Photo_Url" alt="Select Book From Quick Search" width="342px" height="500px">
+            <h3>{{bindBook.Title}} </h3>
+        </div>
+        <div class="col-1 center-request-page">
+            <div>
+                {{bindUser.FirstName}}
+            </div>
+            <div>
+                <h1><i class="fa fa-exchange" aria-hidden="true"></i></h1>
+            </div>
+            <div>
+
+            </div>
+            <div class="my__account__wrapper" (click)="makeRequest()">
+                <div class="account__form">
+                    <div class="form__btn ">
+                        <button type="button"> Request</button>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                {{error}}
+            </div>
+
+        </div>
+        <div class="col-4 center-request-page">
+            <h3>You Give</h3>
+            <div class="input__box">
+                <ng-autocomplete [data]="data" [searchKeyword]="keyword" (selected)='selectEvent($event)' (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate">
+                </ng-autocomplete>
+                <ng-template #itemTemplate let-item>
+                    <a [innerHTML]="item.Title"></a>
+                </ng-template>
+                <ng-template #notFoundTemplate let-notFound>
+                    <div [innerHTML]="notFound"></div>
+                </ng-template>
+            </div>
+            <img #BookImage alt="big images" [src]="selectedBook.Photo_Url" width="342px" height="500px">
+            <h3>{{selectedBook.Title}} </h3>
+        </div>
+        <div class="col-4">
+
+        </div>
+    </div>
+
+
+</div>
+<!-- <form #Add_Book_Form class="modal-product" [formGroup]="form" (ngSubmit)="addBook()"> -->
+<!-- Start product images -->
+<!-- <div class="product-images add_book__form__product_Image">
+                <div class="main-image images">
+                    <img #BookImage alt="big images" [src]="bookImageUrl" width="342px" height="500px">
+                    <input type="file" name="image_location" id="image_location" placeholder="Choose Image">
+                </div>
+            </div> -->
+<!-- end product images -->
+<!-- <div class="product-info add_book__form__product_Info">
+            <div class="my__account__wrapper"> -->
+
+<!-- <div class="account__form add_book__form">
+
+                        <div class="input__box">
+                            <label>Quick Search<span></span></label>
+                            <ng-autocomplete [data]="data" [searchKeyword]="keyword" (selected)='selectEvent($event)' (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate">
+                            </ng-autocomplete>
+                            <ng-template #itemTemplate let-item>
+                                <a [innerHTML]="item.Title"></a>
+                            </ng-template>
+                            <ng-template #notFoundTemplate let-notFound>
+                                <div [innerHTML]="notFound"></div>
+                            </ng-template>
+                        </div>
+                        <br>
+                        <div class="input__box">
+                            <label>Title<span>*</span></label>
+                            <input type="text" placeholder="Enter Title " formControlName="Title">
+                        </div>
+                        <div class="input__box">
+                            <label>Author Name<span>*</span></label>
+                            <input type="text" placeholder="Enter Author Name" formControlName="Author_Name">
+                        </div>
+                        <div class="input__box">
+                            <label>Description<span>*</span></label>
+                            <textarea rows="4" cols="75" name="description" placeholder="Enter Descritipn of book" formControlName="Description"></textarea>
+                        </div>
+                        <label class="label-for-checkbox">
+                          <input id="want_book" class="input-checkbox" name="Want" value="want" formControlName="Want" type="radio">
+                          <span>  I Want this book</span>
+                      </label>
+                        <br>
+
+                        <label class="label-for-checkbox">
+                          <input id="heve_book" class="input-checkbox" name="Want" value="have" formControlName="Want" type="radio">
+                          <span>  I have this book</span>
+                      </label>
+                        <br>
+                        <div class="form__btn">
+                            <button>Add</button>
+                            <input type="submit" value="Add">
+                        </div>
+                    </div> -->
+<!-- </form> -->
+<!-- </div>
+
+            </div>
+        </form> -->
+<!-- </div> -->
+<!-- </div> -->

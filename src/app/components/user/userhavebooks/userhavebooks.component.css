@@ -1,0 +1,21 @@
+/* :host{
+    display: inline-block;
+}
+.wantBooks
+{
+    width: 100%;
+}
+ 
+.wantBooks .itemBook{
+ 
+    display: inline-block;
+
+} 
+@media (max-width: 767px) {
+    .wantBooks {
+
+     padding: 10px;
+     margin: 5px;
+     
+    }
+} */
